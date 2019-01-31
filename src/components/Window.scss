@@ -1,7 +1,55 @@
 @import 'src/style/variables';
 
+$window-border-radius: 7px;
+$control-btn-size: 10px;
+
 .window {
   background-color: $pearl;
   height: 500px;
   width: 650px;
+  display: flex;
+  border-radius: $window-border-radius;
+}
+
+.sidebar {
+  height: 100%;
+  width: 150px;
+  background-color: $midnight-blue;
+  border: {
+    top-left-radius: $window-border-radius;
+    bottom-left-radius: $window-border-radius;
+  }
+
+  &__controls {
+    margin: 0;
+    padding: 15px;
+    list-style: none;
+    height: 40px;
+    border-top-left-radius: $window-border-radius;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__control {
+    height: $control-btn-size;
+    width: $control-btn-size;
+    border-radius: 50%;
+    margin-right: $control-btn-size;
+
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &--close {
+      background-color: $red;
+    }
+    &--minimize {
+      background-color: $yellow;
+    }
+    &--maximize {
+      background-color: $green;
+    }
+  }
 }

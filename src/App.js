@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import "./App.scss";
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return <div className="App" />;
-  }
-}
+import { Window } from './components/Window';
 
-export default App;
+import './App.scss';
+
+export const App = () => (
+  <div className="app">
+    <Window />
+  </div>
+);

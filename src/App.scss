@@ -1,4 +1,16 @@
-.App {
+@import 'style/variables';
+
+.app {
   min-height: 100vh;
-  background-color: #282c34;
+  // @TODO - refine size & position
+  background: {
+    color: $silver-grey;
+    image: url('./assets/background.jpg');
+    size: cover;
+    position: center;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

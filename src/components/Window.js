@@ -7,7 +7,7 @@ const controlButtons = ['close', 'minimize', 'maximize'];
 export const Window = () => (
   <div className="window">
     <div className="sidebar">
-      <ul class="sidebar__controls">
+      <ul className="sidebar__controls">
         {controlButtons.map(type => (
           <li>
             <button className={`sidebar__control sidebar__control--${type}`} />

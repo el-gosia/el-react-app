@@ -52,4 +52,29 @@ $control-btn-size: 10px;
       background-color: $green;
     }
   }
+
+  &__navigation {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.nav-button {
+  font-size: 14px;
+  color: $white;
+  padding: 17px 15px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    background-color: $greyish-blue;
+  }
+
+  &__icon {
+    fill: $white;
+  }
 }

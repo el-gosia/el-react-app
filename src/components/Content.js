@@ -1,7 +1,6 @@
 import React from 'react';
-import classnames from 'classnames';
 
-import { ReactComponent as StarIcon } from '../assets/icon-star.svg';
+import { Issue } from './Issue';
 
 import './Content.scss';
 
@@ -12,15 +11,8 @@ export const Content = ({ issues: register }) => (
         <li key={id} className="entry">
           <h2 className="entry__heading">{date}</h2>
           <ul className="entry__issues-list">
-            {issues.map(({ id: issueId, name, open }) => (
-              <li key={issueId} className="issue">
-                <p className="issue__label">{name}</p>
-                <StarIcon
-                  className={classnames('issue__icon', {
-                    'issue__icon--open': open,
-                  })}
-                />
-              </li>
+            {issues.map(({ name, open, ...issue }) => (
+              <Issue key={issue.id} name={name} isOpen={open} />
             ))}
           </ul>
         </li>

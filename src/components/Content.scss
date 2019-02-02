@@ -10,4 +10,24 @@ $window-border-radius: 7px;
     top-right-radius: $window-border-radius;
     bottom-right-radius: $window-border-radius;
   }
+  overflow: auto;
+}
+
+.register__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entry {
+  &__heading {
+    font-size: 12px;
+  }
+
+  &__issues-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
 }

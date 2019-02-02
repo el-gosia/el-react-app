@@ -1,0 +1,13 @@
+@import 'src/style/variables';
+
+$window-border-radius: 7px;
+
+.content {
+  background-color: $pearl;
+  flex-grow: 1;
+  height: 100%;
+  border: {
+    top-right-radius: $window-border-radius;
+    bottom-right-radius: $window-border-radius;
+  }
+}

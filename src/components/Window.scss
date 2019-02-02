@@ -9,13 +9,3 @@ $content-size: 500px;
   display: flex;
   border-radius: $window-border-radius;
 }
-
-.content {
-  background-color: $pearl;
-  width: $content-size;
-  height: $content-size;
-  border: {
-    top-right-radius: $window-border-radius;
-    bottom-right-radius: $window-border-radius;
-  }
-}

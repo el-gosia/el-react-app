@@ -11,6 +11,7 @@ export const Window = ({ isLoading, issues }) => {
 
   return (
     <div className="window">
+      <div className="mask background" />
       <Sidebar />
       <Content issues={issues} />
     </div>

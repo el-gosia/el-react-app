@@ -2,15 +2,17 @@
 
 .app {
   min-height: 100vh;
-  // @TODO - refine size & position
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
   background: {
     color: $silver-grey;
     image: url('./assets/background.jpg');
     size: cover;
-    position: center;
+    position: right center;
+    repeat: no-repeat;
   }
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

@@ -23,8 +23,7 @@ export class App extends Component {
     const { isLoading, issues } = this.state;
 
     return (
-      <div className="app">
-        <Window isLoading={isLoading} issues={issues} />
+      <div className="app background">
       </div>
     );
   }

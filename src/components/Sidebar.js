@@ -19,14 +19,14 @@ export const Sidebar = () => (
   <div className="sidebar">
     <ul className="sidebar__controls">
       {controlButtons.map(type => (
-        <li>
+        <li key={type}>
           <button className={`sidebar__control sidebar__control--${type}`} />
         </li>
       ))}
     </ul>
     <ul className="sidebar__navigation">
       {navigationFilters.map(({ label, count, icon: Icon }) => (
-        <li className="nav-button">
+        <li key={label} className="nav-button">
           <Icon className="nav-button__icon" />
           <p className="nav-button__label">{label}</p>
           <p className="nav-button__count">{count}</p>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Loader from 'react-loader';
 
 import { Window } from './components/Window';
 
@@ -23,10 +22,9 @@ export class App extends Component {
   render() {
     const { isLoading, issues } = this.state;
 
-    if (isLoading) return <Loader />;
     return (
       <div className="app">
-        <Window issues={issues} />
+        <Window isLoading={isLoading} issues={issues} />
       </div>
     );
   }

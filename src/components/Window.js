@@ -27,10 +27,12 @@ export const Window = () => (
         {navigationFilters.map(({ label, count, icon: Icon }) => (
           <li className="nav-button">
             <Icon className="nav-button__icon" />
-            {label} {count}
+            <p className="nav-button__label">{label}</p>
+            <p className="nav-button__count">{count}</p>
           </li>
         ))}
       </ul>
     </div>
+    <div className="content" />
   </div>
 );

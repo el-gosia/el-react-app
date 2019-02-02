@@ -2,10 +2,10 @@
 
 $window-border-radius: 7px;
 $control-btn-size: 10px;
+$content-size: 500px;
 
 .window {
-  background-color: $pearl;
-  height: 500px;
+  height: $content-size;
   width: 650px;
   display: flex;
   border-radius: $window-border-radius;
@@ -14,13 +14,14 @@ $control-btn-size: 10px;
 .sidebar {
   height: 100%;
   width: 150px;
-  background-color: $midnight-blue;
+  background-color: $navy;
   border: {
     top-left-radius: $window-border-radius;
     bottom-left-radius: $window-border-radius;
   }
 
   &__controls {
+    background-color: $midnight-blue;
     margin: 0;
     padding: 15px;
     list-style: none;
@@ -76,5 +77,29 @@ $control-btn-size: 10px;
 
   &__icon {
     fill: $white;
+  }
+
+  &__count {
+    margin: 0;
+    text-align: center;
+    min-width: 13px;
+    color: $dark-grey;
+  }
+
+  &__label {
+    margin: 0;
+    flex-grow: 1;
+    text-transform: capitalize;
+    padding-left: 9px;
+  }
+}
+
+.content {
+  background-color: $pearl;
+  width: $content-size;
+  height: $content-size;
+  border: {
+    top-right-radius: $window-border-radius;
+    bottom-right-radius: $window-border-radius;
   }
 }

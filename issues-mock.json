@@ -1,0 +1,81 @@
+{
+  "register": [
+    {
+      "date": "19-07-2016",
+      "issues": [
+        {
+          "name": "Page changes",
+          "open": false
+        },
+        {
+          "name": "Review of last issues",
+          "open": false
+        }
+      ]
+    },
+    {
+      "date": "18-07-2016",
+      "issues": [
+        {
+          "name": "Visual UI Update Review",
+          "open": true
+        },
+        {
+          "name": "Sidebar changes",
+          "open": true
+        }
+      ]
+    },
+    {
+      "date": "15-07-2016",
+      "issues": [
+        {
+          "name": "Crash update",
+          "open": true
+        },
+        {
+          "name": "Page visual UI Update Review",
+          "open": false
+        },
+        {
+          "name": "Sidebar update",
+          "open": true
+        }
+      ]
+    },
+    {
+      "date": "14-07-2016",
+      "issues": [
+        {
+          "name": "Crash issue",
+          "open": false
+        },
+        {
+          "name": "Visual update & Crash resolve",
+          "open": false
+        },
+        {
+          "name": "Lorem ipsum",
+          "open": false
+        }
+      ]
+    },
+    {
+      "date": "13-07-2016",
+      "issues": [
+        {
+          "name": "Lorem crash",
+          "open": false
+        },
+        {
+          "name": "Ipsum update",
+          "open": false
+        },
+        {
+          "name": "Lorem ipsum resolve",
+          "open": false
+        }
+      ]
+    }
+  ]
+}

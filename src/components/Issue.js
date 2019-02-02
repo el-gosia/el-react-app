@@ -1,5 +1,6 @@
-import React from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import { ReactComponent as StarIcon } from '../assets/icon-star.svg';
 
@@ -16,4 +17,9 @@ export const Issue = ({ name, isOpen }) => {
       />
     </li>
   );
+};
+
+Issue.propTypes = {
+  name: PropTypes.string.isRequired,
+  isOpen: PropTypes.bool.isRequired,
 };

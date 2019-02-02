@@ -6,14 +6,14 @@ import { Content } from './Content';
 
 import './Window.scss';
 
-export const Window = ({ isLoading, issues }) => {
+export const Window = ({ isLoading, register }) => {
   if (isLoading) return <Loader />;
 
   return (
     <div className="window">
       <div className="mask background" />
       <Sidebar />
-      <Content issues={issues} />
+      <Content register={register} />
     </div>
   );
 };

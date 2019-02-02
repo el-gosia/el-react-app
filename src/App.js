@@ -9,21 +9,22 @@ export class App extends Component {
     super(props);
     this.state = {
       isLoading: true,
-      issues: [],
+      register: [],
     };
   }
 
   async componentDidMount() {
     const response = await fetch('http://localhost:9000/register');
-    const issues = await response.json();
-    this.setState({ issues, isLoading: false });
+    const register = await response.json();
+    this.setState({ register, isLoading: false });
   }
 
   render() {
-    const { isLoading, issues } = this.state;
+    const { isLoading, register } = this.state;
 
     return (
       <div className="app background">
+        <Window isLoading={isLoading} register={register} />
       </div>
     );
   }

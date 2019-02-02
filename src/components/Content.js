@@ -4,7 +4,7 @@ import { Issue } from './Issue';
 
 import './Content.scss';
 
-export const Content = ({ issues: register }) => (
+export const Content = ({ register }) => (
   <div className="content">
     <ul className="register__list">
       {register.map(({ id, date, issues }) => (

@@ -1,0 +1,32 @@
+@import 'src/style/variables';
+
+.issue {
+  border: 1px solid $silver-grey;
+  border-radius: 5px;
+  background-color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 12px;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  &__label {
+    margin: 0;
+    font-size: 15px;
+    line-height: 16px;
+  }
+
+  &__icon {
+    display: inline-block;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    &--open {
+      fill: $white;
+      stroke: $silver-grey;
+    }
+  }
+}

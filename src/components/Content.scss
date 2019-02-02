@@ -4,29 +4,35 @@ $window-border-radius: 7px;
 
 .content {
   background-color: $pearl;
+  padding: 10px 5px 0 15px;
   flex-grow: 1;
   height: 100%;
   border: {
     top-right-radius: $window-border-radius;
     bottom-right-radius: $window-border-radius;
   }
-  overflow: auto;
 }
 
 .register__list {
   margin: 0;
   padding: 0;
   list-style: none;
+  height: 100%;
+  overflow: auto;
 }
 
 .record {
   &__heading {
     font-size: 12px;
+    font-weight: normal;
+    line-height: 1;
+    color: $dark-grey;
+    margin: 0 0 9px;
   }
 
   &__issues-list {
     margin: 0;
-    padding: 0;
+    padding: 0 13px 10px 0;
     list-style: none;
   }
 }

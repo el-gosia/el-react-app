@@ -43,7 +43,7 @@ describe('Window component when application has loaded', () => {
   });
 
   it('contains a div that acts as a mask with blurred background', () => {
-    expect(wrapper).toContain('.mask.background');
+    expect(wrapper).toContainMatchingElement('.mask.background');
   });
 
   it('passes register down as a prop to the Content component', () => {

@@ -36,10 +36,7 @@ $control-btn-size: 10px;
     border-radius: 50%;
     margin-right: $control-btn-size;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    display: block;
     padding: 0;
     border: none;
     outline: none;
@@ -94,31 +91,17 @@ $control-btn-size: 10px;
     &--maximize {
       background: $green;
 
-      // create a pseudo-selector-based icon for maximize button
+      // create a pseudo-selector-based ➕ icon for maximize button
       &:before,
       &:after {
-        height: 0;
-        width: 0;
-        border: {
-          radius: 0;
-          width: 2px;
-          style: solid;
-          bottom-color: $dark-green;
-          left-color: $dark-green;
-          right-color: transparent;
-          top-color: transparent;
-        }
-        transform: translate(-60%, -35%);
+        background: $dark-green;
+        height: 6px;
+        width: 1px;
       }
 
       &:after {
-        border: {
-          top-color: $dark-green;
-          right-color: $dark-green;
-          bottom-color: transparent;
-          left-color: transparent;
-        }
-        transform: translate(-30%, -60%);
+        height: 1px;
+        width: 6px;
       }
     }
   }

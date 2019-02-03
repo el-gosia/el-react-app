@@ -1,38 +1,13 @@
 @import './variables';
 
-@function next-device($device) {
-  $device-keys: map-keys($devices);
-  $i: index($device-keys, $device);
-
-  @return if($i < length($device-keys), nth($device-keys, $i + 1), null);
-}
-
-@mixin from-device-up($device) {
-  $min: map-get($devices, $device);
-  @media (min-width: $min) {
+@mixin mobile-height() {
+  @media (max-height: $window-height) {
     @content;
   }
 }
 
-@mixin from-device-down($device) {
-  $max: map-get($devices, $device);
-  @media (max-width: $max) {
+@mixin mobile-width() {
+  @media (max-width: $window-width) {
     @content;
-  }
-}
-
-@mixin for-device($device) {
-  $min: map-get($devices, $device);
-  $next: next-device($device);
-  $max: if($next, map-get($devices, $next), null);
-
-  @if ($max) {
-    @media (min-width: $min) and (max-width: $max) {
-      @content;
-    }
-  } @else {
-    @include from-device-up($min) {
-      @content;
-    }
   }
 }

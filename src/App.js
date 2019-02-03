@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { Window } from './components/Window';
+import { register } from './mock/issues';
 
 import './App.scss';
 
@@ -14,9 +15,16 @@ export class App extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch('http://localhost:9000/register');
-    const register = await response.json();
-    this.setState({ register, isLoading: false });
+    try {
+      const response = await fetch('http://localhost:9000/register');
+      const fetchedRegister = await response.json();
+      this.setState({ register: fetchedRegister });
+    } catch (err) {
+      console.log(err);
+      this.setState({ register });
+    } finally {
+      this.setState({ isLoading: false });
+    }
   }
 
   render() {

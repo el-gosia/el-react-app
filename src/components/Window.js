@@ -7,14 +7,14 @@ import { Content } from './Content';
 
 import './Window.scss';
 
-export const Window = ({ isLoading, register }) => {
+export const Window = ({ isLoading, register, onIssueClick }) => {
   if (isLoading) return <Loader />;
 
   return (
     <div className="window">
       <div className="mask background" />
       <Sidebar />
-      <Content register={register} />
+      <Content register={register} onIssueClick={onIssueClick} />
     </div>
   );
 };

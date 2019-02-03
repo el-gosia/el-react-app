@@ -24,8 +24,24 @@ export class App extends Component {
 
     return (
       <div className="app background">
-        <Window isLoading={isLoading} register={register} />
+        <Window
+          isLoading={isLoading}
+          register={register}
+          onIssueClick={this.toggleStatus}
+        />
       </div>
     );
   }
+
+  toggleStatus = (date, id) => {
+    const register = [...this.state.register];
+
+    const record = register.find(record => record.date === date);
+    if (!record) return;
+
+    const issue = record.issues.find(issue => issue.id === id);
+    issue && (issue.open = !issue.open);
+
+    this.setState({ register });
+  };
 }

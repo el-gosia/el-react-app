@@ -6,20 +6,31 @@ import { ReactComponent as StarIcon } from '../assets/icon-star.svg';
 
 import './Issue.scss';
 
-export const Issue = ({ name, isOpen }) => {
+export const Issue = ({ issue, date, onIssueClick }) => {
+  const { id, name, open } = issue;
+
+  function onStarClick() {
+    onIssueClick(date, id);
+  }
+
   return (
     <li className="issue">
       <p className="issue__label">{name}</p>
       <StarIcon
         className={classnames('issue__icon', {
-          'issue__icon--open': isOpen,
+          'issue__icon--open': open,
         })}
+        onClick={onStarClick}
       />
     </li>
   );
 };
 
 Issue.propTypes = {
-  name: PropTypes.string.isRequired,
-  isOpen: PropTypes.bool.isRequired,
+  issue: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    open: PropTypes.bool.isRequired,
+  }).isRequired,
+  date: PropTypes.string.isRequired,
 };

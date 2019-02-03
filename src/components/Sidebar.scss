@@ -42,11 +42,6 @@ $control-btn-size: 10px;
     outline: none;
     position: relative;
 
-    &:hover:before,
-    &:hover:after {
-      opacity: 1;
-    }
-
     // common styles for all icons on control-buttons
     &:before,
     &:after {
@@ -104,6 +99,11 @@ $control-btn-size: 10px;
         width: 6px;
       }
     }
+
+    &:hover:before,
+    &:hover:after {
+      opacity: 1;
+    }
   }
 }
 
@@ -116,18 +116,6 @@ $control-btn-size: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  &:hover {
-    background: $greyish-blue;
-  }
-
-  &:active {
-    background: $light-grey-blue;
-
-    .nav-button__count {
-      color: $white;
-    }
-  }
 
   &__icon {
     fill: $white;
@@ -145,5 +133,17 @@ $control-btn-size: 10px;
     flex-grow: 1;
     text-transform: capitalize;
     padding-left: 9px;
+  }
+
+  &:hover {
+    background: $greyish-blue;
+  }
+
+  &:active {
+    background: $light-grey-blue;
+
+    .nav-button__count {
+      color: $white;
+    }
   }
 }

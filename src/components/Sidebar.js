@@ -26,10 +26,12 @@ export const Sidebar = () => (
     </ul>
     <ul className="sidebar__navigation">
       {navigationFilters.map(({ label, count, icon: Icon }) => (
-        <li key={label} className="nav-button">
-          <Icon className="nav-button__icon" />
-          <p className="nav-button__label">{label}</p>
-          <p className="nav-button__count">{count}</p>
+        <li key={label}>
+          <button className="nav-button">
+            <Icon className="nav-button__icon" />
+            <p className="nav-button__label">{label}</p>
+            <p className="nav-button__count">{count}</p>
+          </button>
         </li>
       ))}
     </ul>

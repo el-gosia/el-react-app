@@ -21,6 +21,8 @@ export const Issue = ({ issue, date, onIssueClick }) => {
           'issue__icon--open': open,
         })}
         onClick={onStarClick}
+        role="button"
+        tabIndex="0"
       />
     </li>
   );

@@ -118,7 +118,9 @@ $control-btn-size: 10px;
     }
 
     &:hover:before,
-    &:hover:after {
+    &:hover:after,
+    &:focus:before,
+    &:focus:after {
       opacity: 1;
     }
   }
@@ -134,13 +136,16 @@ $control-btn-size: 10px;
   justify-content: space-between;
   align-items: center;
 
+  width: 100%;
+  background: none;
+  border: none;
+
   &__icon {
     fill: $white;
   }
 
   &__count {
     margin: 0;
-    text-align: center;
     min-width: 13px;
     color: $dark-grey;
   }
@@ -148,12 +153,15 @@ $control-btn-size: 10px;
   &__label {
     margin: 0;
     flex-grow: 1;
+    text-align: left;
     text-transform: capitalize;
     padding-left: 9px;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: $greyish-blue;
+    outline: none;
   }
 
   &:active {

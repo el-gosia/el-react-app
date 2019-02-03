@@ -25,14 +25,18 @@
     cursor: pointer;
     transition: 0.3s all;
 
-    &:hover {
+    &:hover,
+    &:focus {
       fill: $purple;
       stroke: none;
+      outline: none;
     }
+
     &--open {
       fill: $white;
       stroke: $silver-grey;
-      &:hover {
+      &:hover,
+      &:focus {
         fill: $cold-purple;
         stroke: none;
       }

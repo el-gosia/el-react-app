@@ -37,3 +37,5 @@ Issue.propTypes = {
   date: PropTypes.string.isRequired,
   onIssueClick: PropTypes.func.isRequired,
 };
+
+StarIcon.displayName = 'StarIcon';

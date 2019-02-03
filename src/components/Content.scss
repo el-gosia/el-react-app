@@ -15,11 +15,13 @@ $window-border-radius: 7px;
 
   @include mobile-height() {
     margin-left: 150px;
+    border-radius: 0;
   }
 
   @include mobile-width() {
     margin-left: 125px;
     padding-left: 5px;
+    border-radius: 0;
   }
 }
 

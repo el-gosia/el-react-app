@@ -3,6 +3,12 @@
 
 $window-border-radius: 7px;
 
+@mixin full-screen-window() {
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0;
+}
+
 .window {
   height: $window-height;
   width: $window-width;
@@ -13,11 +19,11 @@ $window-border-radius: 7px;
   z-index: 1;
 
   @include mobile-width() {
-    height: 100vh;
+    @include full-screen-window();
   }
 
   @include mobile-height() {
-    width: 100vw;
+    @include full-screen-window();
   }
 }
 

@@ -11,11 +11,11 @@ export const Window = ({ isLoading, register, onIssueClick }) => {
   if (isLoading) return <Loader />;
 
   return (
-    <div className="window">
+    <section className="window">
       <div className="mask background" />
       <Sidebar />
       <Content register={register} onIssueClick={onIssueClick} />
-    </div>
+    </section>
   );
 };
 

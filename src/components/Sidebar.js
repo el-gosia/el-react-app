@@ -27,7 +27,7 @@ export const Sidebar = () => (
       {navigationFilters.map(({ label, count, icon: Icon }) => (
         <li key={label}>
           <button className="nav-button">
-            <Icon className="nav-button__icon" />
+            <Icon className="nav-button__icon" aria-hidden="true" />
             <p className="nav-button__label">{label}</p>
             <p className="nav-button__count">{count}</p>
           </button>

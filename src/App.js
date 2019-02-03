@@ -31,13 +31,13 @@ export class App extends Component {
     const { isLoading, register } = this.state;
 
     return (
-      <div className="app background">
+      <main className="app background">
         <Window
           isLoading={isLoading}
           register={register}
           onIssueClick={this.toggleStatus}
         />
-      </div>
+      </main>
     );
   }
 

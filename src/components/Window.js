@@ -34,4 +34,7 @@ Window.propTypes = {
       ).isRequired,
     }).isRequired
   ),
+  onIssueClick: PropTypes.func.isRequired,
 };
+
+Loader.displayName = 'Loader';

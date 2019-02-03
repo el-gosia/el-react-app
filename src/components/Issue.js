@@ -35,4 +35,5 @@ Issue.propTypes = {
     open: PropTypes.bool.isRequired,
   }).isRequired,
   date: PropTypes.string.isRequired,
+  onIssueClick: PropTypes.func.isRequired,
 };

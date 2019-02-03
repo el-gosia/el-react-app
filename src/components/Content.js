@@ -41,4 +41,5 @@ Content.propTypes = {
       ).isRequired,
     }).isRequired
   ).isRequired,
+  onIssueClick: PropTypes.func.isRequired,
 };

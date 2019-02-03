@@ -1,8 +1,7 @@
 @import 'src/style/variables';
+@import 'src/style/mixins';
 
 $window-border-radius: 7px;
-$window-height: 500px;
-$window-width: 650px;
 
 .window {
   height: $window-height;
@@ -12,6 +11,14 @@ $window-width: 650px;
   overflow: hidden;
   position: relative;
   z-index: 1;
+
+  @include mobile-width() {
+    height: 100vh;
+  }
+
+  @include mobile-height() {
+    width: 100vw;
+  }
 }
 
 .mask {
@@ -24,4 +31,11 @@ $window-width: 650px;
   filter: blur(4px);
   -webkit-filter: blur(4px);
   z-index: -1;
+
+  @include mobile-width() {
+    left: 0;
+  }
+  @include mobile-height() {
+    top: 0;
+  }
 }

@@ -1,4 +1,5 @@
 @import 'src/style/variables';
+@import 'src/style/mixins';
 
 $window-border-radius: 7px;
 
@@ -10,6 +11,15 @@ $window-border-radius: 7px;
   border: {
     top-right-radius: $window-border-radius;
     bottom-right-radius: $window-border-radius;
+  }
+
+  @include mobile-height() {
+    margin-left: 150px;
+  }
+
+  @include mobile-width() {
+    margin-left: 125px;
+    padding-left: 5px;
   }
 }
 
@@ -34,5 +44,9 @@ $window-border-radius: 7px;
     margin: 0;
     padding: 0 13px 10px 0;
     list-style: none;
+
+    @include mobile-width() {
+      padding-right: 5px;
+    }
   }
 }

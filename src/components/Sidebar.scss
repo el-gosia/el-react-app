@@ -1,7 +1,15 @@
 @import 'src/style/variables';
+@import 'src/style/mixins';
 
 $window-border-radius: 7px;
 $control-btn-size: 10px;
+
+@mixin fixed-sidebar() {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
 
 .sidebar {
   height: 100%;
@@ -10,6 +18,15 @@ $control-btn-size: 10px;
   border: {
     top-left-radius: $window-border-radius;
     bottom-left-radius: $window-border-radius;
+  }
+
+  @include mobile-width() {
+    @include fixed-sidebar();
+    width: 125px;
+  }
+
+  @include mobile-height() {
+    @include fixed-sidebar();
   }
 
   &__navigation {

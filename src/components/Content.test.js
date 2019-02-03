@@ -2,9 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { Content } from './Content';
-import { mockTestRegister } from '../mock/test-register';
-
-const onIssueClick = jest.fn().mockName('onIssueClick');
+import { mockTestRegister, onIssueClick } from '../mock/test-mocks';
 
 const props = {
   register: mockTestRegister,

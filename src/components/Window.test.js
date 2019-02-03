@@ -2,9 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { Window } from './Window';
-import { mockTestRegister } from '../mock/test-register';
-
-const onIssueClick = jest.fn().mockName('onIssueClick');
+import { mockTestRegister, onIssueClick } from '../mock/test-mocks';
 
 describe('Window component when application is loading', () => {
   const props = {

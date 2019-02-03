@@ -16,3 +16,5 @@ export const mockTestRegister = [
     ],
   },
 ];
+
+export const onIssueClick = jest.fn().mockName('onIssueClick');

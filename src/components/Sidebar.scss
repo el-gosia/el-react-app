@@ -67,6 +67,14 @@ $control-btn-size: 10px;
     background-color: $greyish-blue;
   }
 
+  &:active {
+    background-color: $light-grey-blue;
+
+    .nav-button__count {
+      color: $white;
+    }
+  }
+
   &__icon {
     fill: $white;
   }

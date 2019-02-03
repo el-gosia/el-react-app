@@ -23,10 +23,19 @@
     display: inline-block;
     flex-shrink: 0;
     cursor: pointer;
+    transition: 0.3s all;
 
+    &:hover {
+      fill: $purple;
+      stroke: none;
+    }
     &--open {
       fill: $white;
       stroke: $silver-grey;
+      &:hover {
+        fill: $cold-purple;
+        stroke: none;
+      }
     }
   }
 }

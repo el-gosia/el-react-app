@@ -2,8 +2,10 @@
   "name": "el-react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://el-gosia.github.io/el-react-app",
   "dependencies": {
     "classnames": "^2.2.6",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.6.2",
@@ -18,7 +20,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.js",
-    "stylelint": "stylelint src/**/*.{css,scss}"
+    "stylelint": "stylelint src/**/*.{css,scss}",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

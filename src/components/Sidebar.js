@@ -15,7 +15,6 @@ const navigationFilters = [
 ];
 
 export const Sidebar = () => (
-  // @TODO - refine blurred background & control buttons styling
   <div className="sidebar">
     <ul className="sidebar__controls">
       {controlButtons.map(type => (

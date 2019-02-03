@@ -6,14 +6,20 @@ $control-btn-size: 10px;
 .sidebar {
   height: 100%;
   width: 150px;
-  background-color: $transparent-blue;
+  background: $transparent-blue;
   border: {
     top-left-radius: $window-border-radius;
     bottom-left-radius: $window-border-radius;
   }
 
+  &__navigation {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
   &__controls {
-    background-color: $midnight-blue;
+    background: $midnight-blue;
     margin: 0;
     padding: 15px;
     list-style: none;
@@ -30,26 +36,91 @@ $control-btn-size: 10px;
     border-radius: 50%;
     margin-right: $control-btn-size;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     padding: 0;
     border: none;
     outline: none;
-    cursor: pointer;
+    position: relative;
+
+    &:hover:before,
+    &:hover:after {
+      opacity: 1;
+    }
+
+    // common styles for all icons on control-buttons
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      border-radius: 1px;
+      opacity: 0;
+    }
 
     &--close {
-      background-color: $red;
-    }
-    &--minimize {
-      background-color: $yellow;
-    }
-    &--maximize {
-      background-color: $green;
-    }
-  }
+      background: $red;
 
-  &__navigation {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+      // create a pseudo-selector-based ✖ icon for close button
+      &:before,
+      &:after {
+        background: $maroon;
+        height: 7px;
+        width: 1px;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+
+    &--minimize {
+      background: $yellow;
+
+      // create a pseudo-selector-based ➖ icon for minimize button
+      &:before {
+        height: 1px;
+        width: 6px;
+        background: $brown;
+      }
+    }
+
+    &--maximize {
+      background: $green;
+
+      // create a pseudo-selector-based icon for maximize button
+      &:before,
+      &:after {
+        height: 0;
+        width: 0;
+        border: {
+          radius: 0;
+          width: 2px;
+          style: solid;
+          bottom-color: $dark-green;
+          left-color: $dark-green;
+          right-color: transparent;
+          top-color: transparent;
+        }
+        transform: translate(-60%, -35%);
+      }
+
+      &:after {
+        border: {
+          top-color: $dark-green;
+          right-color: $dark-green;
+          bottom-color: transparent;
+          left-color: transparent;
+        }
+        transform: translate(-30%, -60%);
+      }
+    }
   }
 }
 
@@ -64,11 +135,11 @@ $control-btn-size: 10px;
   align-items: center;
 
   &:hover {
-    background-color: $greyish-blue;
+    background: $greyish-blue;
   }
 
   &:active {
-    background-color: $light-grey-blue;
+    background: $light-grey-blue;
 
     .nav-button__count {
       color: $white;

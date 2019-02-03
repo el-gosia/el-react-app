@@ -1,9 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { shallow } from 'enzyme';
+import { App } from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('App component', () => {
+  const wrapper = shallow(<App />);
+  it('renders without crashing', () => {
+    expect(wrapper.find('div')).toExist();
+  });
+
+  it('contains div with classNames app and background', () => {
+    expect(wrapper).toContainMatchingElement('.app.background');
+  });
+
+  it('renders exactly one Window component', () => {
+    const window = wrapper.find('Window');
+    expect(window).toHaveLength(1);
+  });
 });

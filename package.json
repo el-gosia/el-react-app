@@ -9,6 +9,8 @@
     "enzyme-adapter-react-16": "^1.8.0",
     "gh-pages": "^2.0.1",
     "jest-enzyme": "^7.0.1",
+    "mobx": "^5.9.0",
+    "mobx-react": "^5.4.3",
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.6.2",
@@ -16,7 +18,8 @@
     "react-dom": "^16.7.0",
     "react-loader": "^2.4.5",
     "react-scripts": "2.1.3",
-    "react-test-renderer": "^16.7.0"
+    "react-test-renderer": "^16.7.0",
+    "recompose": "^0.30.0"
   },
   "scripts": {
     "start": "react-scripts start | json-server --watch issues-db.json --port 9000",

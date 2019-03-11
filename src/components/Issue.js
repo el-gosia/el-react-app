@@ -5,13 +5,15 @@ import React from 'react';
 import { ReactComponent as StarIcon } from '../assets/icon-star.svg';
 
 import './Issue.scss';
+import { compose } from 'recompose';
+import { inject, observer } from 'mobx-react';
 
-export const Issue = ({ issue, date, onIssueClick }) => {
+export const IssueInner = ({ issue, date, registerStore }) => {
   const { id, name, open } = issue;
 
-  function onStarClick() {
-    onIssueClick(date, id);
-  }
+  const onStarClick = () => {
+    registerStore.toggleIssue(date, id);
+  };
 
   return (
     <li className="issue">
@@ -28,6 +30,11 @@ export const Issue = ({ issue, date, onIssueClick }) => {
   );
 };
 
+export const Issue = compose(
+  inject('registerStore'),
+  observer
+)(IssueInner);
+
 Issue.propTypes = {
   issue: PropTypes.shape({
     id: PropTypes.string.isRequired,
@@ -35,7 +42,6 @@ Issue.propTypes = {
     open: PropTypes.bool.isRequired,
   }).isRequired,
   date: PropTypes.string.isRequired,
-  onIssueClick: PropTypes.func.isRequired,
 };
 
 StarIcon.displayName = 'StarIcon';

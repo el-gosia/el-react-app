@@ -4,52 +4,46 @@ import { Window } from './components/Window';
 import { register } from './mock/issues';
 
 import './App.scss';
+import { compose } from 'recompose';
+import { inject, observer } from 'mobx-react';
 
-export class App extends Component {
+export class AppInner extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      register: [],
     };
   }
 
   async componentDidMount() {
+    const { registerStore } = this.props;
     try {
       const response = await fetch('http://localhost:9000/register');
       const fetchedRegister = await response.json();
-      this.setState({ register: fetchedRegister });
+
+      registerStore.updateRegister(fetchedRegister);
+      registerStore.countIssues();
     } catch (err) {
       console.log(err);
-      this.setState({ register });
+      registerStore.updateRegister(register);
+      registerStore.countIssues();
     } finally {
       this.setState({ isLoading: false });
     }
   }
 
   render() {
-    const { isLoading, register } = this.state;
+    const { isLoading } = this.state;
 
     return (
       <main className="app background">
-        <Window
-          isLoading={isLoading}
-          register={register}
-          onIssueClick={this.toggleStatus}
-        />
+        <Window isLoading={isLoading} />
       </main>
     );
   }
-
-  toggleStatus = (date, id) => {
-    const register = [...this.state.register];
-
-    const record = register.find(record => record.date === date);
-    if (!record) return;
-
-    const issue = record.issues.find(issue => issue.id === id);
-    issue && (issue.open = !issue.open);
-
-    this.setState({ register });
-  };
 }
+
+export const App = compose(
+  inject('registerStore'),
+  observer
+)(AppInner);

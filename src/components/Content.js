@@ -1,34 +1,34 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Issue } from './Issue';
+import Issue from '../containers/IssueContainer';
 
 import './Content.scss';
 
-export const Content = ({ register, onIssueClick }) => (
-  <div className="content">
-    <ul className="register__list">
-      {register.map(({ id, date, issues }) => (
-        <li key={id} className="record">
-          <h2 className="record__heading">{date}</h2>
-          <ul className="record__issues-list">
-            {issues.map(issue => (
-              <Issue
-                key={issue.id}
-                issue={issue}
-                date={date}
-                onIssueClick={onIssueClick}
-              />
-            ))}
-          </ul>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+export const Content = ({ records }) => {
+  return (
+    <div className="content">
+      <ul className="register__list">
+        {records.map(
+          ({ id, date, issues }) =>
+            issues.length > 0 && (
+              <li key={id} className="record">
+                <h2 className="record__heading">{date}</h2>
+                <ul className="record__issues-list">
+                  {issues.map(issue => (
+                    <Issue key={issue.id} issue={issue} date={date} />
+                  ))}
+                </ul>
+              </li>
+            )
+        )}
+      </ul>
+    </div>
+  );
+};
 
 Content.propTypes = {
-  register: PropTypes.arrayOf(
+  records: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
@@ -41,5 +41,4 @@ Content.propTypes = {
       ).isRequired,
     }).isRequired
   ).isRequired,
-  onIssueClick: PropTypes.func.isRequired,
 };

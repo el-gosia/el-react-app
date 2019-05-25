@@ -6,7 +6,7 @@ export const register = [
       {
         id: '1-1',
         name: 'Page changes',
-        open: false,
+        open: true,
       },
       {
         id: '1-2',

@@ -15,10 +15,14 @@ export class App extends Component {
   }
 
   async componentDidMount() {
+    const { updateRegister, updateIssues } = this.props;
+
     try {
       const response = await fetch('http://localhost:9000/register');
       const fetchedRegister = await response.json();
-      this.setState({ register: fetchedRegister });
+      updateRegister(fetchedRegister);
+      const issues = createIssuesMap(fetchedRegister);
+      updateIssues(issues);
     } catch (err) {
       console.log(err);
       this.setState({ register });
@@ -28,15 +32,11 @@ export class App extends Component {
   }
 
   render() {
-    const { isLoading, register } = this.state;
+    const { isLoading } = this.state;
 
     return (
       <main className="app background">
-        <Window
-          isLoading={isLoading}
-          register={register}
-          onIssueClick={this.toggleStatus}
-        />
+        <Window isLoading={isLoading} />
       </main>
     );
   }
@@ -52,4 +52,16 @@ export class App extends Component {
 
     this.setState({ register });
   };
+}
+
+function createIssuesMap(register) {
+  const map = {};
+
+  register.forEach(record =>
+    record.issues.forEach(
+      ({ id, name, open }) => (map[id] = { name, open, date: record.date })
+    )
+  );
+
+  return map;
 }

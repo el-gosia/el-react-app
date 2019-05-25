@@ -6,11 +6,11 @@ import { ReactComponent as StarIcon } from '../assets/icon-star.svg';
 
 import './Issue.scss';
 
-export const Issue = ({ issue, date, onIssueClick }) => {
+export const Issue = ({ issue, date, toggleIssueStatus }) => {
   const { id, name, open } = issue;
 
   function onStarClick() {
-    onIssueClick(date, id);
+    toggleIssueStatus(date, id);
   }
 
   return (
@@ -35,7 +35,7 @@ Issue.propTypes = {
     open: PropTypes.bool.isRequired,
   }).isRequired,
   date: PropTypes.string.isRequired,
-  onIssueClick: PropTypes.func.isRequired,
+  toggleIssueStatus: PropTypes.func.isRequired,
 };
 
 StarIcon.displayName = 'StarIcon';
